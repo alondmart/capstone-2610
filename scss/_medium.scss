@@ -15,3 +15,49 @@ nav ul {
     $w: calc($i /12) *100%; // /12 bc there are 112 colums in foundation framework
     .medium-#{$i} {flex-basis: $w;}
 }
+
+.hero {
+    div{
+        position: absolute;
+        bottom: 16px;
+        right: 200px;
+        color: white;
+        h2{
+            margin: 0;
+            font-size: 1.3rem;
+            text-shadow: 0 0 15px black ;
+        }
+    }
+} //end hero video 
+
+
+
+div.allCards {
+    display: flex;
+    gap: $gutter;
+    section {
+        flex-basis: calc(50% - ($gutter/2));
+    }
+} // end div.allCards
+
+
+
+
+.clients  { // these are the clients imgs
+    img {
+        max-width: none;
+        width:auto;
+        height:auto;
+    }
+}
+
+
+.locations {
+    margin-bottom:2*$gutter;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gutter;
+    justify-content: space-around;
+
+
+}

@@ -324,7 +324,7 @@ html {
   box-sizing: border-box;
 }
 
-main h1, main h2, main div.row, footer, header {
+main h1, main h2, main div.row, footer, header, div.allCards {
   padding: 0 16px;
 }
 
@@ -353,6 +353,9 @@ header h1 {
   font-weight: 500;
 }
 
+nav {
+  z-index: 1;
+}
 nav button {
   position: absolute;
   top: 0;
@@ -396,46 +399,30 @@ nav ul li, nav ul li a, nav ul li.active a {
   list-style-type: none;
 }
 
-div.hero {
+.hero {
   position: relative;
-  z-index: -1;
 }
-div.hero video {
+.hero video {
   width: 100%;
   height: auto;
 }
-div.hero div {
+.hero div {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
-  color: white;
+  top: 0;
+  left: 5px;
+  margin: 16px;
+  width: 120px;
+  background-color: pink;
+  height: 80%;
 }
-div.hero div h2 {
+.hero div h2 {
+  color: red;
   margin: 0;
-  font-size: 1.3rem;
-  text-shadow: 0 0 15px black;
+  font-size: 0.9rem;
 }
 
-main img {
-  width: 100%;
-  height: auto;
-}
-
-main button {
-  border: 2px solid #585C89;
-  background-color: transparent;
-  padding: 1rem;
-  font-weight: 700;
-  border-radius: 40px;
-  color: #585C89;
-}
-main button:hover {
-  background-color: #585C89;
-  color: white;
-}
-
-main p {
-  margin-top: 0;
+.clients img {
+  max-width: 150px;
 }
 
 .row {
@@ -524,18 +511,71 @@ ion-icon {
   font-size: 8rem;
 }
 
+div.allCards section {
+  border: 2px solid green;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+div.allCards section h3, div.allCards section p, div.allCards section img {
+  margin: 0;
+  padding: 1rem 16px;
+}
+div.allCards section h3 {
+  background-color: #d7deff;
+  text-align: center;
+}
+div.allCards section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+div.allCards section img.e2e {
+  padding: 0;
+}
+div.allCards section p {
+  font-style: italic;
+}
+
 #footerWrapper {
-  background-color: #585C89;
+  background-color: black;
+}
+
+.locations {
+  margin-bottom: 32px;
+}
+
+.phone {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}
+.phone h2 {
+  color: white;
+}
+.phone:hover {
+  text-decoration: underline;
 }
 
 footer {
   padding: 0.5rem 16px;
+}
+footer h2 {
+  color: #aaa;
+  margin-bottom: 0;
+}
+footer address {
+  padding-left: 10px;
+  color: #cfcfcf;
+  font-weight: 300;
 }
 footer p {
   margin: 0;
   font-weight: 300;
   text-align: center;
   color: white;
+  padding: 16px 0;
 }
 
 @media only screen and (min-width: 35rem) {
@@ -584,6 +624,36 @@ footer p {
   }
   .medium-12 {
     flex-basis: 100%;
+  }
+  .hero div {
+    position: absolute;
+    bottom: 16px;
+    right: 200px;
+    color: white;
+  }
+  .hero div h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    text-shadow: 0 0 15px black;
+  }
+  div.allCards {
+    display: flex;
+    gap: 16px;
+  }
+  div.allCards section {
+    flex-basis: calc(50% - 8px);
+  }
+  .clients img {
+    max-width: none;
+    width: auto;
+    height: auto;
+  }
+  .locations {
+    margin-bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-around;
   }
 }
 @media only screen and (min-width: 60rem) {
@@ -663,5 +733,12 @@ footer p {
   }
   .large-12 {
     flex-basis: 100%;
+  }
+  div.allCards section {
+    flex-basis: calc(25% - 12px);
+  }
+  .clients img {
+    width: 100%;
+    height: auto;
   }
 }

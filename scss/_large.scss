@@ -43,3 +43,19 @@ nav {
     $w: calc($i /12) *100%; // /12 bc there are 112 colums in foundation framework
     .large-#{$i} {flex-basis: $w;}
 }
+
+
+
+div.allCards {
+    section {
+        flex-basis: calc(25% - (($gutter *3)/4));
+    }
+} // end div.allCards
+
+
+.clients  { // these are the clients imgs
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

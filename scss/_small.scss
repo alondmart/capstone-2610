@@ -13,7 +13,7 @@ html {
     box-sizing: border-box;
   }
 
-main h1, main h2, main div.row, footer, header {padding: 0 $gutter;}
+main h1, main h2, main div.row, footer, header, div.allCards {padding: 0 $gutter;}
 
 body {
     height: 100%;
@@ -43,6 +43,7 @@ header {
 
 // NAV STUFF
 nav {
+    z-index: 1; // before adding this, the nav would open behind the hero vid
     button {
         position: absolute;
         top: 0;
@@ -82,47 +83,46 @@ nav {
 
 // MAIN STUFF
 
-div.hero {
+.hero {
     position: relative;
-    z-index: -1; // before adding this, the nav would open behind the hero vid
+    // z-index: -1; // before adding this, the nav would open behind the hero vid
     video {
         width: 100%;
         height: auto;
     }
     div{
         position: absolute;
-        bottom: 16px;
-        left: 16px;
-        color: white;
+        // bottom: 23px;
+        // left: 16px;
+        top: 0; 
+        left:5px;
+        margin: $gutter;
+        width: 120px;
+        background-color: pink;
+        height: 80%;
+
         h2{
+            color: red;
             margin: 0;
-            font-size: 1.3rem;
-            text-shadow: 0 0 15px black ;
+            font-size: .9rem;
+
         }
         // p{ text-shadow: 0 0 15px black ;}
     }
 } //end hero video 
 
 
-main img {
-    width: 100%;
-    height: auto;
-}
-
-main button {
-    border: 2px solid $primaryColor;
-    background-color: transparent;
-    padding: 1rem;
-    font-weight: $boldWeight;
-    border-radius: 40px;
-    color: $primaryColor;
-    &:hover {
-        background-color: $primaryColor;
-        color: white;
+.clients  { // these are the clients imgs
+    img {
+        max-width: 150px;
+        // width: 100px;
+        // height:auto;
     }
 }
 
-main p {margin-top: 0;}
+
+
+
 
 // styling the  rows
 .row {
@@ -158,18 +158,86 @@ ion-icon {
     font-size: 8rem;
   }
 
+  div.allCards {
+    section {
+        border: 2px solid green;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 1rem 0;
+        h3, p, img {
+            margin: 0;
+            padding: 1rem $gutter;
+        }
+        h3 {
+            background-color: $secondaryColor;
+            // font-size: 1.5rem;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block; //by default the img is inline, so we change it to block which gets rid of the small gap between things
+        }
+        img.e2e {padding: 0;}
+        p {
+           font-style: italic;
+        }
+
+    }
+} // end div.allCards
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // FOOTER STUFF
 #footerWrapper {
-    background-color: $primaryColor;
+    background-color: black;
+}
+
+.locations {
+    margin-bottom:2*$gutter;
+ 
+}
+
+.phone {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    h2 {color: white;}
+    &:hover {text-decoration: underline;}
 }
 
 footer {
     padding: 0.5rem $gutter;
+    h2 {
+        color: #aaa;
+        margin-bottom: 0;
+    }
+    address {
+        padding-left: 10px;
+        color: #cfcfcf;
+        font-weight: $lightWeight;
+    }
     p {
         margin: 0;
         font-weight: $lightWeight;
         text-align: center;
         color: white;
+        // border-top: 1px dashed white;
+        padding: $gutter 0;
     }
 }
