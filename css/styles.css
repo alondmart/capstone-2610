@@ -324,19 +324,19 @@ html {
   box-sizing: border-box;
 }
 
-main h1, main h2, main div.row, footer, header, div.allCards {
+main h1, main div.row, footer, header, div.allCards {
   padding: 0 16px;
 }
 
 body {
   height: 100%;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Exo", sans-serif;
   font-weight: 500;
   color: #333;
 }
 
 #headerWrapper {
-  background-color: #d7deff;
+  background-color: white;
   color: #585C89;
 }
 
@@ -351,6 +351,7 @@ header h1 {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 500;
+  color: #b23f61;
 }
 
 nav {
@@ -368,7 +369,7 @@ nav button {
 }
 nav ul {
   padding: 0;
-  background-color: #585C89;
+  background-color: white;
   position: absolute;
   right: 0;
   top: 70px;
@@ -376,27 +377,44 @@ nav ul {
   display: none;
 }
 nav ul li {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 nav ul li a {
   display: block;
   padding: 0.9rem 2vw;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
-  color: #fff;
+  color: #0c0a3e;
   text-align: right;
 }
 nav ul li a:hover {
-  background-color: #50547d;
+  background-color: #ededed;
 }
 nav ul li.active a {
-  background-color: #484b70;
+  color: #b23f61;
 }
 nav ul.open {
   display: block;
 }
 nav ul li, nav ul li a, nav ul li.active a {
   list-style-type: none;
+}
+
+.above {
+  padding: 16px;
+}
+.above h1, .above h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.above h1 {
+  font-weight: 700;
+  color: #0c0a3e;
+}
+.above h3 {
+  font-weight: 500;
+  color: #b23f61;
 }
 
 .hero {
@@ -408,19 +426,27 @@ nav ul li, nav ul li a, nav ul li.active a {
 }
 .hero div {
   position: absolute;
-  top: 0;
-  left: 5px;
-  margin: 16px;
+  top: 5px;
+  left: 16px;
   width: 120px;
-  background-color: pink;
-  height: 80%;
+  height: 90%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
 }
 .hero div h2 {
-  color: red;
+  padding: 5px;
+  color: #0c0a3e;
   margin: 0;
   font-size: 0.9rem;
+  height: 98%;
+  font-weight: 500;
 }
 
+.clients h2 {
+  text-align: center;
+  color: #0c0a3e;
+  margin: 0;
+}
 .clients img {
   max-width: 150px;
 }
@@ -511,30 +537,45 @@ ion-icon {
   font-size: 8rem;
 }
 
-div.allCards section {
-  border: 2px solid green;
+.allCards h2 {
+  text-align: center;
+  color: #0c0a3e;
+  margin: 0;
+}
+.allCards section {
+  background-color: #f3f3f3;
   border-radius: 10px;
   overflow: hidden;
   margin: 1rem 0;
+  box-shadow: #bababa 0px 0px 10px;
 }
-div.allCards section h3, div.allCards section p, div.allCards section img {
+.allCards section h3, .allCards section p, .allCards section img {
   margin: 0;
   padding: 1rem 16px;
 }
-div.allCards section h3 {
-  background-color: #d7deff;
+.allCards section h3 {
+  background-color: #b23f61;
   text-align: center;
+  color: white;
+  font-weight: 500;
 }
-div.allCards section img {
+.allCards section img {
   width: 100%;
   height: auto;
   display: block;
 }
-div.allCards section img.e2e {
+.allCards section .e2e {
   padding: 0;
 }
-div.allCards section p {
+.allCards section ul {
+  padding-left: 32px;
+  padding-right: 16px;
+  font-size: 0.85rem;
+  font-weight: 300;
   font-style: italic;
+}
+.allCards section ul li::marker {
+  color: #b23f61;
 }
 
 #footerWrapper {
@@ -553,6 +594,7 @@ div.allCards section p {
 }
 .phone h2 {
   color: white;
+  font-weight: 500;
 }
 .phone:hover {
   text-decoration: underline;
@@ -564,6 +606,7 @@ footer {
 footer h2 {
   color: #aaa;
   margin-bottom: 0;
+  font-weight: 500;
 }
 footer address {
   padding-left: 10px;
@@ -627,20 +670,18 @@ footer p {
   }
   .hero div {
     position: absolute;
-    bottom: 16px;
-    right: 200px;
-    color: white;
+    left: unset;
+    right: 5px;
   }
   .hero div h2 {
     margin: 0;
     font-size: 1.3rem;
-    text-shadow: 0 0 15px black;
   }
-  div.allCards {
+  .allCards {
     display: flex;
     gap: 16px;
   }
-  div.allCards section {
+  .allCards section {
     flex-basis: calc(50% - 8px);
   }
   .clients img {
@@ -692,11 +733,25 @@ footer p {
     transition: all 0.5s ease;
   }
   nav ul li a:hover {
-    background-color: #afb1cb;
-    color: black !important;
+    background-color: #ededed;
+    color: #0c0a3e !important;
   }
   nav ul li.active a {
-    color: white;
+    color: #b23f61;
+  }
+  .hero div {
+    position: absolute;
+    left: unset;
+    right: unset;
+    top: unset;
+    bottom: 5px;
+    margin: 16px;
+    width: 96.7%;
+    height: 30%;
+  }
+  .hero div h2 {
+    margin: 0;
+    font-size: 2.2rem;
   }
   .large-1 {
     flex-basis: 8.3333333333%;

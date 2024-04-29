@@ -19,20 +19,18 @@ nav ul {
 .hero {
     div{
         position: absolute;
-        bottom: 16px;
-        right: 200px;
-        color: white;
+        left: unset;
+        right: 5px;
         h2{
             margin: 0;
             font-size: 1.3rem;
-            text-shadow: 0 0 15px black ;
         }
     }
 } //end hero video 
 
 
 
-div.allCards {
+.allCards {
     display: flex;
     gap: $gutter;
     section {

@@ -29,13 +29,36 @@ nav {
         transition: all .5s ease;
     }
     ul li a:hover { //has a specificity of 3
-        background-color: lighten($primaryColor, 30%);
-        color: black!important; // adding !important will override everything
+        background-color: darken(white, 7%);
+        color: $dpurple !important; // adding !important will override everything
     }
     ul li.active a { //has a specificity of 4, so no matter the order, 4 will override bc more specific BUT
-        color: white;
+        color: $third;
     }
 } //end of nav
+
+
+
+.hero {
+
+    div{
+        position: absolute;
+        left: unset;
+        right: unset;
+        top: unset;
+        bottom:5px;
+        margin: $gutter;
+        width: 96.7%;
+
+        height: 30%;
+        h2{
+            margin: 0;
+            font-size: 2.2rem;
+        }
+    }
+} //end hero video 
+
+
 
 
 // create the for loop
